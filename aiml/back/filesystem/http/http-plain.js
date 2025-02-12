@@ -8,8 +8,9 @@ const server = http.createServer((req, res) =>
   res.end();
 
 });
-port = 3000;
+//port = 3000;
 
-server.listen(port,() =>{
-    console.log('server is running on port $ {port}');
+server.listen(() =>{
+    const a = server.address();
+    console.log(`server is running on port ${a.port}`);
 });
