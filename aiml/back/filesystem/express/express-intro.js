@@ -6,6 +6,11 @@ const port=3000;
 app.get('/', (req, res) =>{
     res.send("welcome to express")
 });
+app.use(express.json());
+app.post('/users', (req, res) =>{
+    const {name} = req.body;
+    res.send(`my name is ${name}`)
+});
 app.get('/api/:name/:rollno',(req, res)=>{
     try {
         const {name,rollno} = req.params;
